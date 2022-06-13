@@ -1,0 +1,27 @@
+.hero-home {
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+#footer {
+    background-color: #ececec;    
+}
+.loop .card {
+    width: 24%;
+  }
+  
+  .loop {
+    display: flex;
+    column-gap: 1%;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+  }
+  .mini-cart {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    width: 400px;
+    max-width: unset;
+    display: none;
+  }
+  

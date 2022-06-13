@@ -1,0 +1,94 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./">
+        <img src="./logo-head.png" height="60">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" id="inicioNav" onclick="loadContent(0, 'inicio');">
+          Inicio
+        </a>
+  
+        <a class="navbar-item" id="tiendaNav" onclick="loadContent(1,'tienda');">
+          Productos
+        </a>
+        
+        <a class="navbar-item" id="carritoNav" onclick="loadContent(2, 'carrito');">
+            Carrito
+          </a>
+          
+        <!--
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Jobs
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+          -->
+        </div>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Iniciar sesión</strong>
+            </a>
+            <a class="button is-danger" onclick="openMini();">
+                <span class="icon is-medium">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </span>
+              <span id="qty-number" class="quantity">
+              </span>
+            </a>
+            <div class="card mini-cart" id="mini-cart-content">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Tu carrito de compras
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <table class="table is-fullwidth">
+                    <thead>
+                      <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Qty</th>
+                      </tr>
+                    </thead>
+                    <tbody id="mini-cart-list">
+                     
+                    </tbody>
+                  </table>
+                  <button class="button is-link" onclick="loadContent(2, 'carrito');">Ver carrito</button>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
