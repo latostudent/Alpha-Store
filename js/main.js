@@ -72,7 +72,7 @@ for(let p=0; p<totalQty; p++){
 };
 
 /**
- * Cart
+ * Cart data
  */
 
 var cartContent = [];
