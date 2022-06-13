@@ -36,7 +36,7 @@ function loadContent(id,page) {
             cartPageTable();
         };
     });
-    let newQuery = '/?p='+page;
+    let newQuery = '/Alpha-Store/?p='+page;
     window.history.pushState('', page, newQuery);
     
 };
