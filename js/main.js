@@ -37,6 +37,7 @@ function loadContent(id,page) {
         };
     });
     let newQuery = '/Alpha-Store/?p='+page;
+    //let newQuery = '/?p='+page;
     window.history.pushState('', page, newQuery);
     
 };
@@ -85,6 +86,8 @@ function addToCart(idProduct,q) {
 
     if (cartIndex >= 0) {
         cartContent[cartIndex].qty = cartContent[cartIndex].qty+1;
+        cartContent[cartIndex].precio = cartContent[cartIndex].precio*cartContent[cartIndex].qty;
+
         //console.log(cartContent);
     } else {
         var cartItem = {
@@ -97,9 +100,10 @@ function addToCart(idProduct,q) {
         //console.log(cartContent);
     }
     $('#qty-number').html(cartContent.length);
-    openMini();
+    //openMini();
+    $('#mini-cart-content').slideDown();
     setTimeout(function(){
-        openMini();
+        $('#mini-cart-content').slideUp();
     }, 2000);
 
     /**
@@ -127,9 +131,19 @@ function openMini() {
     $('#mini-cart-content').slideToggle();
 };
 
+var totalTable = {
+    subtotal: 0,
+    igv: 0,
+    descuento: 0,
+    total: 0
+
+};
+var discountMount = 0;
 function cartPageTable() {
     $("#cart-page-list").empty();
-     for(let m=0; m<cartContent.length; m++){
+    totalTable.subtotal = 0;
+    subSuma = 0;
+    for(let m=0; m<cartContent.length; m++){
         let itemM = cartContent[m];
         //console.log(dataProductos[p].id);
         //var precioOriginal = dataProductos[p].precio;
@@ -140,6 +154,30 @@ function cartPageTable() {
             <td>${itemM.precio}</td>
             <td>${itemM.qty}</td>
             </tr>
-      `);
+        `);
+        subSuma = subSuma+parseInt(itemM.precio);
     }
+    totalTable.igv = (subSuma*18)/100;
+    totalTable.subtotal = subSuma;
+    $('#sub-cell').text(subSuma);
+    $('#igv-cell').text(totalTable.igv);
+    totalTable.total = (totalTable.subtotal+totalTable.igv)-discountMount;
+    $('#total-cell').text(totalTable.total);
+
 };
+
+
+var discountObj = {};
+
+function applyDiscount() {
+    var search = $('#campo-descuento').val();
+    console.log(search);
+    discountObj = dataCupones.find(c => c.codigo === search);
+    console.log(discountObj);
+    subPrev = totalTable.subtotal+totalTable.igv;
+    var discountMount = subPrev-((subPrev*discountObj.descuento)/100);
+    totalTable.total = (totalTable.subtotal+totalTable.igv)-discountMount;
+    $('#discount-cell').text(discountMount);
+    $('#total-cell').text(totalTable.total);
+
+}

@@ -54,3 +54,18 @@ const dataProductos = [
         stock: 5        
     }
 ]
+const dataCupones = [
+    {
+        id: '01',
+        nombre: 'Repechaje',
+        codigo: 'REPE15',
+        descuento: 15
+    },
+    {
+        id: 02,
+        nombre: 'Fiestas Patrias',
+        codigo: 'PERU2022',
+        descuento: 30
+        
+    }
+]
