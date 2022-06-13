@@ -9,7 +9,7 @@ const contentDiv = $('#content');
 
 var contentData = [
     './home.html',
-    '../shop.html',
+    './shop.html',
     './cart.html'
 ];
 
@@ -57,7 +57,7 @@ for(let p=0; p<totalQty; p++){
     $("#product-list").append(`<div class="card is-shady block">
         <div class="card-image">
             <figure class="image is-4by3">
-                <img src="../img/products/${dataProductos[p].imagen}" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                <img src="./img/products/${dataProductos[p].imagen}" alt="Placeholder image" class="modal-button" data-target="modal-image2">
             </figure>
             </div>
             <div class="card-content">
