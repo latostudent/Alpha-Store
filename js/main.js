@@ -36,8 +36,8 @@ function loadContent(id,page) {
             cartPageTable();
         };
     });
-    let newQuery = '/Alpha-Store/?p='+page;
-    //let newQuery = '/?p='+page;
+    //let newQuery = '/Alpha-Store/?p='+page;
+    let newQuery = '/?p='+page;
     window.history.pushState('', page, newQuery);
     
 };
@@ -153,6 +153,7 @@ function cartPageTable() {
             <td>${itemM.nombre}</td>
             <td>${itemM.precio}</td>
             <td>${itemM.qty}</td>
+            <td></td>
             </tr>
         `);
         subSuma = subSuma+parseInt(itemM.precio);
@@ -163,6 +164,7 @@ function cartPageTable() {
     $('#igv-cell').text(totalTable.igv);
     totalTable.total = (totalTable.subtotal+totalTable.igv)-discountMount;
     $('#total-cell').text(totalTable.total);
+    $('#discount-cell').text('- '+totalTable.descuento);
 
 };
 
@@ -175,9 +177,10 @@ function applyDiscount() {
     discountObj = dataCupones.find(c => c.codigo === search);
     console.log(discountObj);
     subPrev = totalTable.subtotal+totalTable.igv;
-    var discountMount = subPrev-((subPrev*discountObj.descuento)/100);
+    var discountMount = (subPrev*discountObj.descuento)/100;
     totalTable.total = (totalTable.subtotal+totalTable.igv)-discountMount;
-    $('#discount-cell').text(discountMount);
+    totalTable.descuento = discountMount;
+    $('#discount-cell').text('- '+discountMount);
     $('#total-cell').text(totalTable.total);
 
 }
