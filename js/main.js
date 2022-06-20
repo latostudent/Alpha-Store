@@ -10,7 +10,8 @@ const contentDiv = $('#content');
 var contentData = [
     './home.html',
     './shop.html',
-    './cart.html'
+    './cart.html',
+    './checkout.html'
 ];
 
 $('#header').load('./header.html');
@@ -26,6 +27,9 @@ $(document).ready(function(){
     } else if (idUrl == 'carrito') {
         loadContent(2,'carrito');
         //$('#content').load('./cart.html');
+    } else if (idUrl == 'pagar') {
+        loadContent(3,'pagar');
+        //$('#content').load('./cart.html');
     }
 });
 
@@ -34,10 +38,14 @@ function loadContent(id,page) {
         loadFinish(4,page);
         if (page == 'carrito') {
             cartPageTable();
+            finalCost();
+        } else if (page == 'pagar') {
+            finalCost();
+            formCheckout()
         };
     });
-    //let newQuery = '/Alpha-Store/?p='+page;
-    let newQuery = '/?p='+page;
+    let newQuery = '/Alpha-Store/?p='+page;
+    //let newQuery = '/?p='+page;
     window.history.pushState('', page, newQuery);
     
 };
@@ -135,6 +143,7 @@ var totalTable = {
     subtotal: 0,
     igv: 0,
     descuento: 0,
+    envio: 0,
     total: 0
 
 };
@@ -160,14 +169,18 @@ function cartPageTable() {
     }
     totalTable.igv = (subSuma*18)/100;
     totalTable.subtotal = subSuma;
-    $('#sub-cell').text(subSuma);
-    $('#igv-cell').text(totalTable.igv);
+    
     totalTable.total = (totalTable.subtotal+totalTable.igv)-discountMount;
-    $('#total-cell').text(totalTable.total);
-    $('#discount-cell').text('- '+totalTable.descuento);
+    
 
 };
 
+function finalCost() {
+    $('#sub-cell').text(totalTable.subtotal);
+    $('#igv-cell').text(totalTable.igv);
+    $('#total-cell').text(totalTable.total);
+    $('#discount-cell').text('- '+totalTable.descuento);
+}
 
 var discountObj = {};
 
@@ -184,3 +197,26 @@ function applyDiscount() {
     $('#total-cell').text(totalTable.total);
 
 }
+
+
+function formCheckout() {
+    $("#select-departamento").empty();
+    for(let z=0; z<departamentos.length; z++){
+        $("#select-departamento").append(`
+            <option value="${departamentos[z].id}">${departamentos[z].nombre}</option>
+        `);
+    }
+    $("#select-departamento").change(function(){
+        $("#select-provincia").empty();
+        var valDepartamento = $("#select-departamento").val();
+        var proviciaFind = provincias.filter(p => p.departamento === valDepartamento);
+        //console.log(proviciaFind)
+        //console.log('cambio');
+        for(let p=0; p<proviciaFind.length; p++){
+            $("#select-provincia").append(`
+                <option value="${proviciaFind[p].id}">${proviciaFind[p].nombre}</option>
+            `);
+        }
+    });
+
+};

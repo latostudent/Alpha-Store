@@ -62,10 +62,71 @@ const dataCupones = [
         descuento: 15
     },
     {
-        id: 02,
+        id: '02',
         nombre: 'Fiestas Patrias',
         codigo: 'PERU2022',
         descuento: 30
         
+    }
+]
+
+const departamentos = [
+    {
+        id: '01',
+        nombre: 'Lima Metropolitana'
+    },
+    {
+        id: '02',
+        nombre: 'Arequipa'
+    }
+]
+const provincias = [
+    {
+        id: 'P01',
+        nombre: 'Lima',
+        departamento: '01'
+    },
+    {
+        id: 'P02',
+        nombre: 'Arequipa',
+        departamento: '02'
+    },
+    {
+        id: 'P03',
+        nombre: 'Camaná',
+        departamento: '02'
+    }
+]
+
+const distritos = [
+    {
+        id: 'd01',
+        nombre: 'Chorrillos',
+        provincia: 'P01'
+    },
+    {
+        id: 'd02',
+        nombre: 'San Borja',
+    provincia: 'P01'
+    },
+    {
+        id: 'd03',
+        nombre: 'Arequipa',
+    provincia: 'P02'
+    },
+    {
+        id: 'd04',
+        nombre: 'Cerro Colorado',
+    provincia: 'P02'
+    },
+    {
+        id: 'd05',
+        nombre: 'Camaná',
+    provincia: 'P03'
+    },
+    {
+        id: 'd06',
+        nombre: 'Quilca',
+    provincia: 'P03'
     }
 ]

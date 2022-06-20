@@ -1,0 +1,221 @@
+<section class="hero is-dark is-small">
+    <div class="hero-body">
+      <div class="">
+        <p class="title">
+          Finalizar compra
+        </p>
+        <p class="subtitle">
+          Inicio > Finalizar compra
+        </p>
+      </div>
+    </div>
+  </section>
+<section class="container mb-6 mt-6">
+    <div class="columns features">
+      <div id="cart-main" class="column is-12 cart-page"">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box card">
+                   <!--  <div class="card" id="">  -->
+                         <header class="card-header">
+                          <p class="card-header-title">
+                            Datos de envio y facturacion
+                          </p>
+                        </header>
+                        <div class="card-content">
+                          <div class="content">
+                              <!--INICIO FORM-->
+                              <div class="field">
+                                  
+                                <div class="field-body">
+                                  
+                                  <div class="field">
+                                    <label class="label">Nombre y apellido</label>
+                                    <p class="control is-expanded has-icons-left">
+                                      <input class="input" type="text" placeholder="Name">
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                      </span>
+                                    </p>
+                                  </div>
+                                  
+                                  <div class="field">
+                                    <label class="label">Correo electrónico</label>
+                                    
+                                    <p class="control is-expanded has-icons-left has-icons-right">
+                                      <input class="input" type="email" placeholder="Email">
+                                      <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                      </span>
+                                      <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                      </span>
+                                    </p>
+                                  
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="field">
+                                <div class="field-label"></div>
+                                <div class="field-body">
+                                  <div class="field is-expanded">
+                                    <label class="label">Teléfono</label>
+                                    <div class="field has-addons">
+                                      <p class="control">
+                                        <a class="button is-static">
+                                          +51
+                                        </a>
+                                      </p>
+                                      <p class="control is-expanded">
+                                        <input class="input" type="tel" placeholder="987654321">
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="field">
+                                
+                                  <label class="label">¿Como desea recibir su pedido?</label>
+                                
+                                <div class="field-body">
+                                  <div class="field is-narrow">
+                                    <div class="control">
+                                      <label class="radio">
+                                        <input type="radio" name="tipoenvio" id="store">
+                                        Retiro en tienda
+                                      </label>
+                                      <label class="radio">
+                                        <input type="radio" name="tipoenvio" id="shipp">
+                                        Envio a domiciclio
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="field" id="zona-envio">
+                                <div class="field-body">
+                                  <div class="field">
+                                    <label class="label">Departamento</label>
+                                    <div class="control">
+                                      <div class="select is-fullwidth">
+                                        <select id="select-departamento">
+                                          <option>Valor 1</option>
+                                          <option>Valor 2</option>
+                                          <option>Valor 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="field" id="provincia-field">
+                                    <label class="label">Provincia</label>
+                                    <div class="control">
+                                      <div class="select is-fullwidth">
+                                        <select id="select-provincia">
+                                          <option>Valor 1</option>
+                                          <option>Valor 2</option>
+                                          <option>Valor 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="field" id="distrito-field">
+                                    <label class="label">Distrito</label>
+                                    <div class="control">
+                                      <div class="select is-fullwidth">
+                                        <select>
+                                          <option>Valor 1</option>
+                                          <option>Valor 2</option>
+                                          <option>Valor 3</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              
+                              
+                              <div class="field">
+                                  <label class="label">Notas adicionales</label>
+                               
+                                <div class="field-body">
+                                  <div class="field">
+                                    <div class="control">
+                                      <input class="input" type="text" placeholder="e.g. Partnership opportunity">
+                                    </div>
+                                    <!--<p class="help is-danger">
+                                      This field is required
+                                    </p> -->
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              
+                              
+                              
+                              <!--FINAL FORM-->
+                          </div>
+                        </div>
+                      <!-- </div> -->
+                </div>
+              </div>
+
+            <div class="tile is-4 is-vertical is-parent">
+              <div class="tile is-child box">
+                <p class="title is-4">Total</p>
+                <!--INICIO TOTAL TABLA-->
+                <table class="table is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Subtotal</th>
+                      <th id="sub-cell">1000</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cart-page-list">
+                    <tr>
+                      <td>IGV</td>
+                      <td id="igv-cell">180</td>
+                    </tr>
+                    <tr>
+                      <td>Descuento</td>
+                      <td id="discount-cell">0</td>
+                    </tr>
+                    <tr>
+                      <td>Envio</td>
+                      <td id="envio-cell">0</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Total</th>
+                      <th id="total-cell">0</th>
+                    </tr>
+                  </tfoot>
+                </table>
+                <!--FIN TOTAL TABLA-->
+                <button class="button is-link">Pagar</button>
+              </div>
+              <div class="tile is-child box">
+                <p class="title is-6">Aplicar cupon</p>
+                <div class="field has-addons">
+                  <div class="control">
+                    <input id="campo-descuento" class="input" type="text" placeholder="Ingrese el codigo">
+                  </div>
+                  <div class="control">
+                    <a class="button is-info" onclick="applyDiscount();">
+                      Aplicar
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+
+    </div>
+    
+  </section>
