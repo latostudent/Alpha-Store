@@ -69,6 +69,22 @@ const dataCupones = [
         
     }
 ]
+const usuarios = [
+    {
+        id: '01',
+        rol: 'customer',
+        username: 'carlos',
+        email: 'carlos@alpha.com',
+        password: '123456'
+    },
+    {
+        id: '02',
+        rol: 'customer',
+        username: 'angela',
+        email: 'angela@alpha.com',
+        password: '654321'
+    }
+]
 
 const departamentos = [
     {
@@ -102,31 +118,37 @@ const distritos = [
     {
         id: 'd01',
         nombre: 'Chorrillos',
-        provincia: 'P01'
+        provincia: 'P01',
+        precio: 15
     },
     {
         id: 'd02',
         nombre: 'San Borja',
-    provincia: 'P01'
+        provincia: 'P01',
+        precio: 20
     },
     {
         id: 'd03',
         nombre: 'Arequipa',
-    provincia: 'P02'
+        provincia: 'P02',
+        precio: 25
     },
     {
         id: 'd04',
         nombre: 'Cerro Colorado',
-    provincia: 'P02'
+        provincia: 'P02',
+        precio: 28
     },
     {
         id: 'd05',
         nombre: 'Camaná',
-    provincia: 'P03'
+        provincia: 'P03',
+        precio: 32
     },
     {
         id: 'd06',
         nombre: 'Quilca',
-    provincia: 'P03'
+        provincia: 'P03',
+        precio: 40
     }
 ]

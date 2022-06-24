@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../image/images.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    text-align: center;
+}
+
+.contenido{
+    width: 700px;
+    height: 400px;
+    background: rgb(148, 140, 172);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.contenido h1{
+    font-size: 30px;
+}
+
+.contenido a{
+    font-size: 20px;
+    line-height: 70px;
+    color: rgb(255, 240, 240);
+}
+
+.contenido a:hover{
+    color: rgb(241, 0, 0);
+}

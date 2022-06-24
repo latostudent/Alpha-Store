@@ -24,4 +24,9 @@
     max-width: unset;
     display: none;
   }
-  
+  #zona-envio {
+    display: none;
+  }
+  .visible {
+    display: block !important;
+  }

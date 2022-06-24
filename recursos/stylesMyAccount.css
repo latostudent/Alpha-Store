@@ -1,0 +1,45 @@
+.body{
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);;
+}
+
+/* .forms form input[type="text"], .forms form input[type="number"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #00ebc7;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.forms input[type="submit"]{
+    width: 100%;
+    border: none;
+    border: 3px solid #00214d;
+    padding: 8px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    font-family: 'poppins', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all .7s ease;
+    }
+    
+    .forms input[type="submit"]:hover{
+        background: #00ebc7;
+        color: #00214d;
+    } */
+    

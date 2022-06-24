@@ -1,0 +1,229 @@
+
+    <link rel="stylesheet" href="./recursos/stylesMyAccount.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />  -->
+
+  
+    <section class="hero is-dark is-small">
+      <div class="hero-body">
+        <div class="">
+          <p class="title">
+            Perfil de usuario
+          </p>
+          <p class="subtitle">
+            Inicio > Mi cuenta
+          </p>
+        </div>
+      </div>
+    </section>
+    <div
+      class="container control mt-6 mb-6"
+      style="
+        margin-right: 150px;
+        margin-left: 150px;
+        padding-left: 15px;
+        padding-right: 15px;
+      "
+    >
+
+      <div class="card">
+        <div class="columns">
+          <div class="column is-one-quarter" style="width: 20rem">
+            <div style="width: 20rem; padding: 2rem">
+              <h3 class="title is-4">Hola, <span id="current-username"></span></h3>
+              <ul class="panel">
+                <br />
+                <a
+                  class="panel-block"
+                  id="idPedidos"
+                  style="cursor: pointer"
+                  onclick="seccionesMyAccount()"
+                  >Mis pedidos</a
+                >
+                <li
+                  id="idDireccion"
+                  class="panel-block"
+                  style="cursor: pointer"
+                >
+                  Dirección de envío
+                </li>
+                <li
+                  id="idPassword"
+                  class="panel-block"
+                  style="cursor: pointer"
+                >
+                  Cambiar contraseña
+                </li>
+                <li
+                  id="idClose"
+                  class="panel-block"
+                  style="cursor: pointer"
+                  onclick="logout()"
+                >
+                  Cerrar Sesión
+                </li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </ul>
+            </div>
+          </div>
+          <!-- Mis pedidos -->
+          <div class="column is-two-thirds p-6">
+            <div id="secMispedidos" style="display: none">
+              <h1 class="card-title">Mis pedidos</h1>
+              <p class="card-text">Aún no hay órdenes.</p>
+            </div>
+            <!-- Sección de Direccion -->
+            <div id="secDireccion" style="display: none">
+              <h1 class="card-title">Dirección de envío</h1>
+                <i>Todos los espacios con (<span style="color: red;">*</span>)deberán ser rellenados.</i>
+                <br>
+                <br/>
+                <form class="field">
+                    <div class="field-body">
+                    <div class="field">
+                      <label for="inputName" class="label">Nombre<span style="color: red;">*</span></label>
+                      <input type="text" class="input is-half" id="inputName">
+                    </div>
+                    <br>
+                    <div class="field">
+                      <label for="inputLastName" class="label">Apellidos<span style="color: red;">*</span></label>
+                      <input type="text" class="input is-half" id="inputLastName">
+                    </div>
+                    </div>
+                    <br>
+                    <div class="field-body">
+                    <div class="field">
+                      <label for="inputAddress" class="label">Dirección 1<span style="color: red;">*</span></label>
+                      <input type="text" class="input is-half" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                  </div>
+                    <br>
+                    <div class="field">
+                      <label for="inputAddress2" class="label">Dirección 2</label>
+                      <input type="text" class="input is-half" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <br>
+                    <div class="field-body">
+                    <div class="field-body is-expanded">
+                            <div class="field is-expanded">
+                                <label for="inputprovincia" class="label">Región de Perú <span style="color: red;">*</span></label>
+                                <div class="select">
+                                <select class="select" id="inputprovincia">
+                                    <option selected>Escoja su provincia</option>
+                                    <option value="1">Amazonas</option>
+                                    <option value="2">Áncash</option>
+                                    <option value="3">Apurímac</option>
+                                    <option value="4">Arequipa</option>
+                                    <option value="5">Ayacucho</option>
+                                    <option value="6">Cajamarca</option>
+                                    <option value="7">Callao</option>
+                                    <option value="8">Cusco</option>
+                                    <option value="9">Huancavelica</option>
+                                    <option value="10">Huánuco</option>
+                                    <option value="11">Ica</option>
+                                    <option value="12">Junin</option>
+                                    <option value="13">La Libertad</option>
+                                    <option value="14">Lambayeque</option>
+                                    <option value="15">Lima Metropolitana</option>
+                                    <option value="16">Lima deparamento</option>
+                                    <option value="17">Loreto</option>
+                                    <option value="18">Madre de Dios</option>
+                                    <option value="19">Moquegua</option>
+                                    <option value="20">Pasco</option>
+                                    <option value="21">Piura</option>
+                                    <option value="22">Puno</option>
+                                    <option value="23">San Martin</option>
+                                    <option value="24">Tacna</option>
+                                    <option value="25">Tumbes</option>
+                                    <option value="26">Ucayali</option>
+                                  </select>
+                                </div>
+                            </div>
+                    </div>
+                    <br>
+                    <div class="field">
+                      <label for="inputState" class="label">Distrito <span style="color: red;">*</span></label>
+                      <input type="text" id="inputState" class="input">
+                    </div>
+                    </div>
+                    <br>
+                    <div class="field is-narrow">
+                      <label for="inputZip" class="label">Código Postal<span style="color: red;">*</span></label>
+                      <input type="text" class="input" id="inputZip">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="field">
+                      <button type="submit" class="button is-link">Guardar</button>
+                    </div>
+                  </form>
+                </div>
+
+         <!-- Sección de Contraseña -->
+                <div id="secPassword" style="display: none">
+                    <h1 class="card-title">Cambiar contraseña</h1>
+                    <i>Todos los espacios con (<span style="color: red;">*</span>)deberán ser rellenados.</i>
+                    <br>
+                    <br>
+                    <form class="row g-3">
+                        <div class="field">
+                            <label for="inputPassword2" class="label" >Antigua contraseña<span style="color: red;">*</span></label>
+                            <input type="text" class="input" id="inputPassword2">
+                        </div>
+                        <div class="field">
+                            <label for="inputPassword4" class="label">Nueva contraseña<span style="color: red;">*</span></label>
+                            <input type="text" class="input" id="inputPassword4">
+                        </div>
+                        <div class="field" style="align-items: right;">
+                            <label for="inputPassword8" class="label">Confirmar contraseña<span style="color: red;">*</span></label>
+                            <input type="text" class="input" id="inputPassword8">
+                        </div>
+                        
+                        <br>
+                        <br>
+                        <div class="col-12">
+                        <button type="submit" class="button is-danger">Guardar</button>
+                        </div>
+                    </form>
+                </div>              
+                
+                <!-- Sección de Cerrar Sesión -->
+                <div id="secClose" style="display: none">
+                <h1 class="card-title">Cerrar Sesión</h1>
+                <p class="card-text">¡Te esperamos pronto!</p>
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+ <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"
+  ></script> -->
+  <script src="./recursos/scriptMyAccount.js"></script>
+
